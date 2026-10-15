@@ -26,4 +26,8 @@ public abstract class Contribuintes {
 
     public abstract Double valorImposto();
 
+    @Override
+    public String toString() {
+        return name + " $" + valorImposto();
+    }
 }

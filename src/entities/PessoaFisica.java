@@ -18,14 +18,11 @@ public class PessoaFisica extends Contribuintes{
 
     @Override
     public Double valorImposto() {
-        if(getRendaAnual() < 20000.0){
-            return getRendaAnual() * 15 / 100;
-        } else if(getRendaAnual() < 20000.0 && getGastosSaude() > 0){
-            return (getRendaAnual() * 15 / 100) - (getGastosSaude() * 50 / 100);
-        } else if (getRendaAnual() >= 20000.0) {
-            return getRendaAnual() * 25 / 100;
-        } else {
-            return (getRendaAnual() * 25 / 100) - (getGastosSaude() * 50 / 100);
+        if (getRendaAnual() < 20000.0) {
+            return getRendaAnual() * 0.15 - getGastosSaude() * 0.5;
+        }
+        else {
+            return getRendaAnual() * 0.25 - getGastosSaude() * 0.5;
         }
 
     }
